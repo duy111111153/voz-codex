@@ -1,0 +1,13 @@
+[Unit]
+Description=Voz Codex voice bridge
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=%h/Work/voz-codex/voz-codex serve
+Restart=on-failure
+RestartSec=2
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=default.target
