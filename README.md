@@ -18,6 +18,7 @@ Puente local para conversar con Codex desde Handy en Omarchy. Convierte voz a te
 ```bash
 git clone https://github.com/duy111111153/voz-codex.git ~/Work/voz-codex
 cd ~/Work/voz-codex
+chmod +x voz-codex handy/transcription
 ./voz-codex doctor
 less docs/instalacion.md
 ```

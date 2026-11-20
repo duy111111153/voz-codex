@@ -8,6 +8,7 @@ Requisitos recomendados
 
 ```bash
 cd ~/Work/voz-codex
+chmod +x voz-codex handy/transcription
 ./voz-codex doctor
 mkdir -p ~/.local/share/com.pais.handy/hooks ~/.config/systemd/user
 install -m 700 handy/transcription ~/.local/share/com.pais.handy/hooks/transcription
