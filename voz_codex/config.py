@@ -14,6 +14,8 @@ RUNTIME_HOME = xdg("XDG_RUNTIME_DIR", "/tmp") / "voz-codex"
 CONFIG_FILE = CONFIG_HOME / "config.toml"
 DB_FILE = DATA_HOME / "voz-codex.sqlite3"
 SOCKET_FILE = RUNTIME_HOME / "control.sock"
+TASK_FILE = RUNTIME_HOME / "task.json"
+CODEX_SOCKET = Path(os.environ.get("CODEX_HOME", str(Path.home() / ".codex"))) / "app-server-control/app-server-control.sock"
 
 
 def ensure_dirs() -> None:
@@ -30,8 +32,12 @@ def load() -> dict:
     data = {
         "codex_command": "codex app-server --stdio",
         "model": "gpt-5.6-luna",
+        # Luna 5.6 medium is the requested implementation profile. Voice and
+        # routing remain local so this setting only affects Codex answers.
+        "model_reasoning_effort": "medium",
         "overlay_corner": "top-right",
         "speech_command": "",
+        "piper_voice": "alex",
         "project": "default",
     }
     if CONFIG_FILE.exists():

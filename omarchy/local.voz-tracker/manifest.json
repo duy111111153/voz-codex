@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "local.voz-tracker",
+  "name": "Voz Codex",
+  "version": "1.0.0",
+  "author": "Voz Codex",
+  "license": "Apache-2.0",
+  "description": "Seguimiento de tareas de Voz Codex",
+  "kinds": ["bar-widget"],
+  "activation": "on-demand",
+  "entryPoints": {"barWidget": "TaskWidget.qml"},
+  "barWidget": {"displayName": "Voz Codex", "description": "Muestra u oculta el seguimiento de la tarea.", "allowMultiple": false}
+}
